@@ -1,0 +1,169 @@
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #2d3436;
+  padding: 20px;
+}
+
+/* ---------- GAME CONTAINER ---------- */
+.game-container {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 420px;
+  max-width: 90%;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* ---------- CONTROLS ---------- */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1em;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* ---------- BOARD ---------- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 12px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.cell {
+  background: #f1f2f6;
+  border-radius: 15px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cell:hover {
+  background: #dfe6e9;
+  transform: scale(1.05);
+}
+
+/* ---------- STATUS ---------- */
+#status {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* ---------- SCORES ---------- */
+.scores {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.score-box {
+  width: 100px;
+  padding: 10px 0;
+  border-radius: 12px;
+  font-size: 1em;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.x-score {
+  background: #0984e3;
+}
+
+.o-score {
+  background: #d63031;
+}
+
+.draw-score {
+  background: #636e72;
+}
+
+/* ---------- BUTTON ---------- */
+#restart {
+  padding: 12px 28px;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+#restart:hover {
+  background: #019874;
+  transform: scale(1.05);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  margin-top: 25px;
+  font-size: 0.9em;
+  color: #fff;
+  opacity: 0.85;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 8px;
+  }
+
+  .cell {
+    font-size: 2.2em;
+  }
+
+  .game-container {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .score-box {
+    width: 80px;
+    font-size: 0.9em;
+  }
+}
